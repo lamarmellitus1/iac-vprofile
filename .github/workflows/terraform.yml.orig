@@ -59,7 +59,7 @@ jobs:
          if: steps.plan.outcome == 'failure' 
          run: exit 1 
 
- HEAD
+<<<<<<< HEAD
        - name: Terraform apply
          id: apple
          run: terraform plan -no-color -input=false -out planfile
@@ -68,7 +68,8 @@ jobs:
        - name: Terraform plan status
          if: steps.plan.outcome == 'failure' 
          run: exit 1     
-         stage
+=======
+>>>>>>> stage
        - name: Terraform Apply
          id: apple
          if: github.ref == 'refs/heads/main' && github.event_name == 'commit'
