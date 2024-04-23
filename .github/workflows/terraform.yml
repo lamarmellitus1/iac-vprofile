@@ -60,7 +60,7 @@ jobs:
          run: exit 1  
 
        - name: Terraform apply
-         id: apply
+         id: apple
          run: terraform plan -no-color -input=false -out planfile
          continue-on-error: true
 
