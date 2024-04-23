@@ -57,16 +57,8 @@ jobs:
 
        - name: Terraform plan status
          if: steps.plan.outcome == 'failure' 
-         run: exit 1  
+         run: exit 1 
 
-       - name: Terraform apply
-         id: apply
-         run: terraform plan -no-color -input=false -out planfile
-         continue-on-error: true
-
-       - name: Terraform plan status
-         if: steps.plan.outcome == 'failure' 
-         run: exit 1     
        - name: Terraform Apply
          id: apple
          if: github.ref == 'refs/heads/main' && github.event_name == 'push'
